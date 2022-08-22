@@ -8,15 +8,15 @@ import (
 	"github.com/cosmos/cosmos-sdk/codec"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	paramtypes "github.com/cosmos/cosmos-sdk/x/params/types"
-	"github.com/relevant-community/oracle/x/atom/types"
+	"github.com/evmos/evmos/v6/x/atom/types"
 )
 
 type (
 	Keeper struct {
-		cdc        codec.BinaryCodec
-		storeKey   sdk.StoreKey
-		memKey     sdk.StoreKey
-		paramstore paramtypes.Subspace
+		cdc          codec.BinaryCodec
+		storeKey     sdk.StoreKey
+		memKey       sdk.StoreKey
+		paramstore   paramtypes.Subspace
 		oracleKeeper types.OracleKeeper
 	}
 )
@@ -28,15 +28,14 @@ func NewKeeper(
 	ps paramtypes.Subspace,
 	oracleKeeper types.OracleKeeper,
 
-
 ) *Keeper {
 
 	return &Keeper{
 
-		cdc:        cdc,
-		storeKey:   storeKey,
-		memKey:     memKey,
-		paramstore: ps,
+		cdc:          cdc,
+		storeKey:     storeKey,
+		memKey:       memKey,
+		paramstore:   ps,
 		oracleKeeper: oracleKeeper,
 	}
 }

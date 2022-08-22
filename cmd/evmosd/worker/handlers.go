@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/relevant-community/oracle/x/atom/types"
+	"github.com/evmos/evmos/v6/x/atom/types"
 	"github.com/relevant-community/oracle/x/oracle/client/cli"
 	oracletypes "github.com/relevant-community/oracle/x/oracle/types"
 	rpctypes "github.com/tendermint/tendermint/rpc/core/types"
@@ -71,4 +71,3 @@ func getAtomPrice(cmd *cobra.Command, helper *cli.WorkerHelper, param oracletype
 	helper.SubmitWorkerTx(atomUsd)
 	return nil
 }
-
