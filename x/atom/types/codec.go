@@ -3,10 +3,11 @@ package types
 import (
 	"github.com/cosmos/cosmos-sdk/codec"
 	cdctypes "github.com/cosmos/cosmos-sdk/codec/types"
+
 	// this line is used by starport scaffolding # 1
-	
+
 	"github.com/cosmos/cosmos-sdk/types/msgservice"
-	exportedOracle "github.com/relevant-community/oracle/x/oracle/exported"
+	exportedOracle "github.com/terra-money/core/x/oracle/exported"
 )
 
 func RegisterCodec(cdc *codec.LegacyAmino) {

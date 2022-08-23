@@ -1,11 +1,11 @@
 syntax = "proto3";
-package evmos.claims.v1;
+package evmos.atom.v1;
 
 import "google/api/annotations.proto";
 import "cosmos/base/query/v1beta1/pagination.proto";
 
 import "cosmos_proto/cosmos.proto";
-import "evmos/atom/atom.proto";
+import "evmos/atom/v1/atom.proto";
 
 option go_package = "github.com/evmos/evmos/v6/x/atom/types";
 // Query defines the gRPC querier service.
@@ -25,4 +25,5 @@ message QueryAtomUsdRequest {
 message QueryAtomUsdResponse {
   AtomUsd atomUsd = 1;
 }
+
 

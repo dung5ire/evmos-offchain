@@ -1,3 +1,11 @@
+
+syntax = "proto3";
+package evmos.atom.v1;
+
+import "gogoproto/gogo.proto";
+
+option go_package = "github.com/evmos/evmos/v6/x/atom/types";
+
 message AtomUsd {
     string price = 1 [
           (gogoproto.jsontag)    = "price",
@@ -7,3 +15,4 @@ message AtomUsd {
       ];
     int64 blockHeight = 2;
   }
+

@@ -6,9 +6,9 @@ import (
 	"net/http"
 
 	"github.com/evmos/evmos/v6/x/atom/types"
-	"github.com/relevant-community/oracle/x/oracle/client/cli"
-	oracletypes "github.com/relevant-community/oracle/x/oracle/types"
 	rpctypes "github.com/tendermint/tendermint/rpc/core/types"
+	"github.com/terra-money/core/x/oracle/client/cli"
+	oracletypes "github.com/terra-money/core/x/oracle/types"
 
 	"github.com/spf13/cobra"
 )

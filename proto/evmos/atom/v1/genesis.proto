@@ -1,7 +1,8 @@
 syntax = "proto3";
-package evmos.atom;
+package evmos.atom.v1;
 
 // this line is used by starport scaffolding # genesis/proto/import
+import "gogoproto/gogo.proto";
 
 option go_package = "github.com/evmos/evmos/v6/x/atom/types";
 
@@ -9,3 +10,4 @@ option go_package = "github.com/evmos/evmos/v6/x/atom/types";
 message GenesisState {
     // this line is used by starport scaffolding # genesis/proto/state
 }
+

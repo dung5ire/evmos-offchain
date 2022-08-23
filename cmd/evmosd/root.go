@@ -42,11 +42,9 @@ import (
 	"github.com/evmos/evmos/v6/app"
 	cmdcfg "github.com/evmos/evmos/v6/cmd/config"
 	evmoskr "github.com/evmos/evmos/v6/crypto/keyring"
-	oraclecli "github.com/relevant-community/oracle/x/oracle/client/cli"
-	"github.com/relevant-community/oracle/cmd/oracled/cmd/worker"
-	"github.com/cosmos/cosmos-sdk/client/keys"
-	
 
+	//"github.com/relevant-community/oracle/cmd/oracled/cmd/worker"
+	"github.com/cosmos/cosmos-sdk/client/keys"
 )
 
 const (
@@ -149,7 +147,7 @@ func NewRootCmd() (*cobra.Command, params.EncodingConfig) {
 	// add rosetta
 	rootCmd.AddCommand(sdkserver.RosettaCommand(encodingConfig.InterfaceRegistry, encodingConfig.Marshaler))
 
-	oraclecli.InitializeWorker(worker.HandleBlock, worker.HandleTx)
+	//oraclecli.InitializeWorker(worker.HandleBlock, worker.HandleTx)
 
 	// add keybase, auxiliary RPC, query, and tx child commands
 	rootCmd.AddCommand(

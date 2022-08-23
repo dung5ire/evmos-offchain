@@ -132,10 +132,17 @@ import (
 	"github.com/evmos/evmos/v6/x/recovery"
 	recoverykeeper "github.com/evmos/evmos/v6/x/recovery/keeper"
 	recoverytypes "github.com/evmos/evmos/v6/x/recovery/types"
-	oracletypes "github.com/relevant-community/oracle/x/oracle/types"
 	"github.com/evmos/evmos/v6/x/vesting"
 	vestingkeeper "github.com/evmos/evmos/v6/x/vesting/keeper"
 	vestingtypes "github.com/evmos/evmos/v6/x/vesting/types"
+
+	"github.com/terra-money/core/x/oracle"
+	oraclekeeper "github.com/terra-money/core/x/oracle/keeper"
+	oracletypes "github.com/terra-money/core/x/oracle/types"
+
+	"github.com/evmos/evmos/v6/x/atom"
+	atomkeeper "github.com/evmos/evmos/v6/x/atom/keeper"
+	atomtypes "github.com/evmos/evmos/v6/x/atom/types"
 )
 
 func init() {
@@ -195,6 +202,9 @@ var (
 		epochs.AppModuleBasic{},
 		claims.AppModuleBasic{},
 		recovery.AppModuleBasic{},
+
+		oracle.AppModuleBasic{},
+		atom.AppModuleBasic{},
 	)
 
 	// module account permissions
@@ -210,12 +220,16 @@ var (
 		erc20types.ModuleName:          {authtypes.Minter, authtypes.Burner},
 		claimstypes.ModuleName:         nil,
 		incentivestypes.ModuleName:     {authtypes.Minter, authtypes.Burner},
+
+		oracletypes.ModuleName:         nil,
+
 	}
 
 	// module accounts that are allowed to receive tokens
 	allowedReceivingModAcc = map[string]bool{
 		distrtypes.ModuleName:      true,
 		incentivestypes.ModuleName: true,
+		oracletypes.ModuleName:       true,
 	}
 )
 
@@ -277,6 +291,9 @@ type Evmos struct {
 	VestingKeeper    vestingkeeper.Keeper
 	RecoveryKeeper   *recoverykeeper.Keeper
 
+	OracleKeeper     oraclekeeper.Keeper
+	atomKeeper atomkeeper.Keeper
+
 	// the module manager
 	mm *module.Manager
 
@@ -332,6 +349,9 @@ func NewEvmos(
 		// evmos keys
 		inflationtypes.StoreKey, erc20types.StoreKey, incentivestypes.StoreKey,
 		epochstypes.StoreKey, claimstypes.StoreKey, vestingtypes.StoreKey,
+
+		oracletypes.StoreKey,
+		atomtypes.StoreKey,
 	)
 
 	// Add the EVM transient store key
@@ -405,6 +425,20 @@ func NewEvmos(
 	// Create IBC Keeper
 	app.IBCKeeper = ibckeeper.NewKeeper(
 		appCodec, keys[ibchost.StoreKey], app.GetSubspace(ibchost.ModuleName), &stakingKeeper, app.UpgradeKeeper, scopedIBCKeeper,
+	)
+
+	// Initialize oracle module keepers
+	app.OracleKeeper = oraclekeeper.NewKeeper(
+		appCodec, keys[oracletypes.StoreKey], app.GetSubspace(oracletypes.ModuleName),
+		app.AccountKeeper, app.BankKeeper, app.DistrKeeper, &stakingKeeper, distrtypes.ModuleName,
+	)
+
+	app.atomKeeper = *atomkeeper.NewKeeper(
+		appCodec,
+		keys[atomtypes.StoreKey],
+		keys[atomtypes.MemStoreKey],
+		app.GetSubspace(atomtypes.ModuleName),
+		app.OracleKeeper,
 	)
 
 	// register the proposal types
@@ -580,6 +614,10 @@ func NewEvmos(
 		claims.NewAppModule(appCodec, *app.ClaimsKeeper),
 		vesting.NewAppModule(app.VestingKeeper, app.AccountKeeper, app.BankKeeper, app.StakingKeeper),
 		recovery.NewAppModule(*app.RecoveryKeeper),
+		oracle.NewAppModule(appCodec, app.OracleKeeper),
+		// this line is used by starport scaffolding # stargate/app/appModule
+		atom.NewAppModule(appCodec, app.atomKeeper),
+		
 	)
 
 	// During begin block slashing happens after distr.BeginBlocker so that
@@ -616,6 +654,7 @@ func NewEvmos(
 		claimstypes.ModuleName,
 		incentivestypes.ModuleName,
 		recoverytypes.ModuleName,
+
 	)
 
 	// NOTE: fee market module must go last in order to retrieve the block gas used.
@@ -689,6 +728,10 @@ func NewEvmos(
 		recoverytypes.ModuleName,
 		// NOTE: crisis module must go at the end to check for invariants on each module
 		crisistypes.ModuleName,
+		oracletypes.ModuleName,
+		// this line is used by starport scaffolding # stargate/app/initGenesis
+		atomtypes.ModuleName,
+
 	)
 
 	app.mm.RegisterInvariants(&app.CrisisKeeper)
@@ -1007,6 +1050,7 @@ func initParamsKeeper(
 	paramsKeeper.Subspace(incentivestypes.ModuleName)
 	paramsKeeper.Subspace(recoverytypes.ModuleName)
 	paramsKeeper.Subspace(oracletypes.ModuleName)
+	paramsKeeper.Subspace(atomtypes.ModuleName)
 	return paramsKeeper
 }
 
