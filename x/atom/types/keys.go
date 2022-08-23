@@ -16,7 +16,8 @@ const (
 	// MemStoreKey defines the in-memory store key
 	MemStoreKey = "mem_atom"
 
-	AtomUsdClaim = "AtomUsdClaim"
+	// Atom Price Claim
+	AtomClaim = "AtomClaim"
 
 )
 
