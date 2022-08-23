@@ -6,7 +6,7 @@ import (
 	cryptocodec "github.com/cosmos/cosmos-sdk/crypto/codec"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/types/msgservice"
-	"github.com/relevant-community/oracle/x/oracle/exported"
+	"github.com/evmos/evmos/v6/x/oracle/exported"
 )
 
 // RegisterLegacyAminoCodec registers all the necessary types and interfaces for the

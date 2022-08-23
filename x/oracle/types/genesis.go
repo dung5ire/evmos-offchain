@@ -5,8 +5,8 @@ import (
 
 	types "github.com/cosmos/cosmos-sdk/codec/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
+	"github.com/evmos/evmos/v6/x/oracle/exported"
 	proto "github.com/gogo/protobuf/proto"
-	"github.com/relevant-community/oracle/x/oracle/exported"
 )
 
 var _ types.UnpackInterfacesMessage = GenesisState{}

@@ -7,8 +7,8 @@ import (
 
 	"github.com/evmos/evmos/v6/x/atom/types"
 	rpctypes "github.com/tendermint/tendermint/rpc/core/types"
-	"github.com/terra-money/core/x/oracle/client/cli"
-	oracletypes "github.com/terra-money/core/x/oracle/types"
+	"github.com/evmos/evmos/v6/x/oracle/client/cli"
+	oracletypes "github.com/evmos/evmos/v6/x/oracle/types"
 
 	"github.com/spf13/cobra"
 )

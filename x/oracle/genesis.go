@@ -4,9 +4,9 @@ import (
 	"fmt"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/relevant-community/oracle/x/oracle/exported"
-	"github.com/relevant-community/oracle/x/oracle/keeper"
-	"github.com/relevant-community/oracle/x/oracle/types"
+	"github.com/evmos/evmos/v6/x/oracle/exported"
+	"github.com/evmos/evmos/v6/x/oracle/keeper"
+	"github.com/evmos/evmos/v6/x/oracle/types"
 )
 
 // InitGenesis initializes the capability module's state from a provided genesis

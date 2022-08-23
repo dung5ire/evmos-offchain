@@ -43,7 +43,7 @@ import (
 	cmdcfg "github.com/evmos/evmos/v6/cmd/config"
 	evmoskr "github.com/evmos/evmos/v6/crypto/keyring"
 
-	//"github.com/relevant-community/oracle/cmd/oracled/cmd/worker"
+	//"github.com/evmos/evmos/v6/cmd/oracled/cmd/worker"
 	"github.com/cosmos/cosmos-sdk/client/keys"
 )
 

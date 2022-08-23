@@ -6,8 +6,8 @@ import (
 	types "github.com/cosmos/cosmos-sdk/codec/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
+	"github.com/evmos/evmos/v6/x/oracle/exported"
 	proto "github.com/gogo/protobuf/proto"
-	"github.com/relevant-community/oracle/x/oracle/exported"
 )
 
 // Message types for the oracle module

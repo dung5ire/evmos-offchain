@@ -6,8 +6,8 @@ import (
 
 	"github.com/cosmos/cosmos-sdk/codec"
 	codectypes "github.com/cosmos/cosmos-sdk/codec/types"
-	"github.com/relevant-community/oracle/x/oracle/exported"
-	"github.com/relevant-community/oracle/x/oracle/types"
+	"github.com/evmos/evmos/v6/x/oracle/exported"
+	"github.com/evmos/evmos/v6/x/oracle/types"
 
 	"github.com/stretchr/testify/require"
 )

@@ -9,9 +9,9 @@ import (
 	stakingkeeper "github.com/cosmos/cosmos-sdk/x/staking/keeper"
 	"github.com/cosmos/cosmos-sdk/x/staking/teststaking"
 	stakingtypes "github.com/cosmos/cosmos-sdk/x/staking/types"
-	oracleapp "github.com/relevant-community/oracle/app"
-	"github.com/relevant-community/oracle/x/oracle/keeper"
-	"github.com/relevant-community/oracle/x/oracle/types"
+	oracleapp "github.com/evmos/evmos/v6/app"
+	"github.com/evmos/evmos/v6/x/oracle/keeper"
+	"github.com/evmos/evmos/v6/x/oracle/types"
 )
 
 // AddClaimType Registers claimType as an orcale params

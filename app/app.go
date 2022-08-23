@@ -136,9 +136,9 @@ import (
 	vestingkeeper "github.com/evmos/evmos/v6/x/vesting/keeper"
 	vestingtypes "github.com/evmos/evmos/v6/x/vesting/types"
 
-	"github.com/terra-money/core/x/oracle"
-	oraclekeeper "github.com/terra-money/core/x/oracle/keeper"
-	oracletypes "github.com/terra-money/core/x/oracle/types"
+	"github.com/evmos/evmos/v6/x/oracle"
+	oraclekeeper "github.com/evmos/evmos/v6/x/oracle/keeper"
+	oracletypes "github.com/evmos/evmos/v6/x/oracle/types"
 
 	"github.com/evmos/evmos/v6/x/atom"
 	atomkeeper "github.com/evmos/evmos/v6/x/atom/keeper"

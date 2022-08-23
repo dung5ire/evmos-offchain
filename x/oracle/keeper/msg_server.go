@@ -8,7 +8,7 @@ import (
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
 	staking "github.com/cosmos/cosmos-sdk/x/staking/types"
 	stakingtypes "github.com/cosmos/cosmos-sdk/x/staking/types"
-	"github.com/relevant-community/oracle/x/oracle/types"
+	"github.com/evmos/evmos/v6/x/oracle/types"
 )
 
 type msgServer struct {

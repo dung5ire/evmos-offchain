@@ -4,8 +4,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/relevant-community/oracle/app"
-	"github.com/relevant-community/oracle/x/oracle/client/cli"
+	"github.com/evmos/evmos/v6/app"
+	"github.com/evmos/evmos/v6/x/oracle/client/cli"
 	"github.com/spf13/cobra"
 	"github.com/stretchr/testify/suite"
 

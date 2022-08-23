@@ -5,7 +5,7 @@ import (
 
 	"github.com/cosmos/cosmos-sdk/store/prefix"
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/relevant-community/oracle/x/oracle/types"
+	"github.com/evmos/evmos/v6/x/oracle/types"
 )
 
 // CreateRound creates a Round (used in genesis file)

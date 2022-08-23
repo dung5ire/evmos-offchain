@@ -7,9 +7,9 @@ import (
 	"github.com/cosmos/cosmos-sdk/client/flags"
 	clitestutil "github.com/cosmos/cosmos-sdk/testutil/cli"
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/relevant-community/oracle/x/oracle/client/cli"
-	"github.com/relevant-community/oracle/x/oracle/exported"
-	"github.com/relevant-community/oracle/x/oracle/types"
+	"github.com/evmos/evmos/v6/x/oracle/client/cli"
+	"github.com/evmos/evmos/v6/x/oracle/exported"
+	"github.com/evmos/evmos/v6/x/oracle/types"
 	"github.com/spf13/cobra"
 	ctypes "github.com/tendermint/tendermint/rpc/core/types"
 )

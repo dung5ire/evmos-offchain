@@ -3,12 +3,12 @@ package keeper_test
 import (
 	"testing"
 
-	"github.com/relevant-community/oracle/app"
-	"github.com/relevant-community/oracle/x/oracle"
-	"github.com/relevant-community/oracle/x/oracle/exported"
-	"github.com/relevant-community/oracle/x/oracle/keeper"
-	"github.com/relevant-community/oracle/x/oracle/testoracle"
-	"github.com/relevant-community/oracle/x/oracle/types"
+	"github.com/evmos/evmos/v6/app"
+	"github.com/evmos/evmos/v6/x/oracle"
+	"github.com/evmos/evmos/v6/x/oracle/exported"
+	"github.com/evmos/evmos/v6/x/oracle/keeper"
+	"github.com/evmos/evmos/v6/x/oracle/testoracle"
+	"github.com/evmos/evmos/v6/x/oracle/types"
 
 	tmproto "github.com/tendermint/tendermint/proto/tendermint/types"
 

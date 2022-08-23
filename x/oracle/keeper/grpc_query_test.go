@@ -5,8 +5,8 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/types/query"
-	"github.com/relevant-community/oracle/x/oracle/exported"
-	"github.com/relevant-community/oracle/x/oracle/types"
+	"github.com/evmos/evmos/v6/x/oracle/exported"
+	"github.com/evmos/evmos/v6/x/oracle/types"
 
 	tmbytes "github.com/tendermint/tendermint/libs/bytes"
 )

@@ -7,9 +7,9 @@ import (
 	"github.com/cosmos/cosmos-sdk/testutil"
 	grpctypes "github.com/cosmos/cosmos-sdk/types/grpc"
 	"github.com/cosmos/cosmos-sdk/types/query"
+	"github.com/evmos/evmos/v6/app"
+	"github.com/evmos/evmos/v6/x/oracle/types"
 	proto "github.com/gogo/protobuf/proto"
-	"github.com/relevant-community/oracle/app"
-	"github.com/relevant-community/oracle/x/oracle/types"
 	"github.com/stretchr/testify/suite"
 
 	testnet "github.com/cosmos/cosmos-sdk/testutil/network"

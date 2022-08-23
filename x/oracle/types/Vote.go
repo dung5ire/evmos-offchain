@@ -5,7 +5,7 @@ import (
 	fmt "fmt"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/relevant-community/oracle/x/oracle/exported"
+	"github.com/evmos/evmos/v6/x/oracle/exported"
 )
 
 // NewVote creates a MsgVote instance

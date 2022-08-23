@@ -18,9 +18,9 @@ import (
 	cdctypes "github.com/cosmos/cosmos-sdk/codec/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/types/module"
-	"github.com/relevant-community/oracle/x/oracle/client/cli"
-	"github.com/relevant-community/oracle/x/oracle/keeper"
-	"github.com/relevant-community/oracle/x/oracle/types"
+	"github.com/evmos/evmos/v6/x/oracle/client/cli"
+	"github.com/evmos/evmos/v6/x/oracle/keeper"
+	"github.com/evmos/evmos/v6/x/oracle/types"
 )
 
 var (
