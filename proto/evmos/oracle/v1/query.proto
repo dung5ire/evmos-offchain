@@ -5,8 +5,8 @@ import "cosmos/base/query/v1beta1/pagination.proto";
 import "gogoproto/gogo.proto";
 import "google/protobuf/any.proto";
 import "google/api/annotations.proto";
-import "oracle/v1/params.proto";
-import "oracle/v1/oracle.proto";
+import "evmos/oracle/v1/params.proto";
+import "evmos/oracle/v1/oracle.proto";
 import "cosmos_proto/cosmos.proto";
 
 // this line is used by starport scaffolding # 1

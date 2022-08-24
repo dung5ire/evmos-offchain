@@ -9,9 +9,9 @@ option go_package = "github.com/evmos/evmos/v6/x/atom/types";
 
 // GenesisState defines the oracle module's genesis state.
 
-import "oracle/v1/params.proto";
-import "oracle/v1/oracle.proto";
-import "oracle/v1/tx.proto";
+import "evmos/oracle/v1/params.proto";
+import "evmos/oracle/v1/oracle.proto";
+import "evmos/oracle/v1/tx.proto";
  
 
 // GenesisState defines the oracle module's genesis state.
